@@ -8,15 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/hello/{name}', name: 'index')]
-    public function index(string $name): Response
+    #[Route('/', name: 'index')]
+    public function index(): Response
     {
-        return $this->render('default/index.html.twig', [
-            'name' => $name,
-        ]);
+        return $this->render('default/index.html.twig');
     }
 
-    
+
     #[Route('/simplicity', methods: ['GET'])]
     public function simple(): Response
     {
